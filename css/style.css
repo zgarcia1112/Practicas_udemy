@@ -107,8 +107,3 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-
-.contenido-hero h2,
-.contenido-hero p {
-  color: var(--blanco);
-}
