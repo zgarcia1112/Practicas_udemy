@@ -1,6 +1,3 @@
-/*el instructor escribe codigo mas general al prinicipio del
-documento y el mas especifico a medida que va avanzando con el documento*/
-
 :root {
   --blanco: #ffffff;
   --primario: #ffc107;
@@ -8,6 +5,10 @@ documento y el mas especifico a medida que va avanzando con el documento*/
   --gris: #757575;
   --oscuro: #212121;
 }
+
+/*el instructor escribe codigo mas general al prinicipio del
+documento y el mas especifico a medida que va avanzando con el documento*/
+
 html {
   box-sizing: border-box; /*hack para box model*/
   font-size: 62.5%; /*hack para convertir 1 rem a 10 px*/
@@ -158,7 +159,45 @@ h1 span {
 /**********hero**********************/
 
 /************Servicios***********/
-.servicios {
-  display: grid;
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    /*
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 200px 800px;*/
+
+    /* se puede hace como arriba o de esta forma simpificada
+    grid: 200px 800px / 300px 300px;*/
+    /*grid-template-columns: 33.3% 33.3% 33.3%; forma de realizarlo con porsentajes*/
+    /*grid-template-columns: 2fr 2fr 2fr; divide el 100% en las fracciones que tenga fr*/
+    /*grid-template-columns: repeat(3, 1fr);  version mas corta simprificada*/
+    grid-template-columns: repeat(3, 33.3%); /*tambien se peude de esta forma.*/
+    column-gap: 1rem;
+  }
+}
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: normal;
+}
+
+.servicio p {
+  line-height: 2; /*se aplica el interlineado*/
+  text-align: center;
+}
+
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 /************Servicios***********/
